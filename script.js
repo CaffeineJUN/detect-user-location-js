@@ -13,7 +13,6 @@ function onSuccess(position) {
     button.innerText = 'Detecting your location...'
 
     let {latitude, longitude} = position.coords
-    // https://api.opencagedata.com/geocode/v1/json?q=LAT+LNG&key=YOUR-API-KEY
     fetch(`https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=${apiKey}`)
         .then(res => res.json())
         .then(result => {
